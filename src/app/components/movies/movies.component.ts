@@ -11,24 +11,36 @@ interface Slide {
 export class MoviesComponent {
   slides: Slide[] = [
     {
-      url: 'https://via.placeholder.com/300x400?text=Movie+1',
-      title: 'Movie 1',
+      url: '../../../assets/Images/arrival.jpg',
+      title: 'Arrival',
     },
     {
-      url: 'https://via.placeholder.com/300x400?text=Movie+2',
-      title: 'Movie 2',
+      url: '../../../assets/Images/blade runner.jpg',
+      title: 'Blade Runner',
     },
     {
-      url: 'https://via.placeholder.com/300x400?text=Movie+3',
-      title: 'Movie 3',
+      url: '../../../assets/Images/DuneImage.jpg',
+      title: 'Dune',
     },
     {
-      url: 'https://via.placeholder.com/300x400?text=Movie+4',
-      title: 'Movie 4',
+      url: '../../../assets/Images/star war.png',
+      title: 'Star War',
     },
     {
-      url: 'https://via.placeholder.com/300x400?text=Movie+5',
-      title: 'Movie 5',
+      url: '../../../assets/Images/The tomorrow war.jpg',
+      title: 'The tomorrow war',
+    },
+    {
+      url: '../../../assets/Images/DuneImage.jpg',
+      title: 'Dune',
+    },
+    {
+      url: '../../../assets/Images/star war.png',
+      title: 'Star War',
+    },
+    {
+      url: '../../../assets/Images/The tomorrow war.jpg',
+      title: 'The tomorrow war',
     },
     {
       url: 'https://via.placeholder.com/300x400?text=Movie+6',
@@ -40,6 +52,8 @@ export class MoviesComponent {
     },
   ];
   currentIndex = 0;
+  translateX = 0;
+  intervalId: any;
 
   ngOnInit() {}
 
@@ -47,10 +61,17 @@ export class MoviesComponent {
 
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+    this.updateSliderPosition();
   }
 
   prevSlide() {
     this.currentIndex =
       (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    this.updateSliderPosition();
+  }
+  updateSliderPosition(): void {
+    const slideWidth = document.querySelector('.slide')?.clientWidth || 300;
+    const margin = 20;
+    this.translateX = -this.currentIndex * (slideWidth + margin);
   }
 }

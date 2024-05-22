@@ -1,7 +1,7 @@
 nav {
   display: flex;
   justify-content: space-around;
-  color: aliceblue;
+  color: #ffffff;
 }
 nav ul {
   display: flex;
@@ -10,6 +10,7 @@ nav ul {
   list-style: none;
 }
 nav .logo {
+  color: #001c1c;
   line-height: 8rem;
   font-size: 3rem;
 }
@@ -40,4 +41,8 @@ nav .checkbtn {
 }
 nav #check {
   display: none;
+}
+.sign-up {
+  font-family: sans-serif;
+  font-weight: bold;
 }
