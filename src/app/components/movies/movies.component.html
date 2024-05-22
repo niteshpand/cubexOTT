@@ -1,0 +1,9 @@
+<div class="slider-container">
+    <div class="slider-track">
+        <div class="slide" *ngFor="let slide of slides">
+            <img [src]="slide.url" [alt]="slide.title">
+        </div>
+    </div>
+    <button class="prev-btn" (click)="prevSlide()">&lt;</button>
+    <button class="next-btn" (click)="nextSlide()">&gt;</button>
+</div>

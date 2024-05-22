@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("assets/Images/DuneImage.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+@media (max-width: 992px) {
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  nav .sign-up {
+    display: none;
+  }
+
+  nav .search-bar {
+    display: none;
+  }
+
+  nav .checkbtn {
+    display: block;
+  }
+
+  #check:checked ~ ul {
+    display: flex;
+  }
+}
