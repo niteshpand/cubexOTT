@@ -2,7 +2,7 @@
 <div class="slider-container">
     <div class="slider-track" [ngStyle]="{ 'transform': 'translateX(' + translateX + 'px)' }">
         <div class="slide" *ngFor="let slide of slides">
-            <a href="#"><img [src]="slide.url" [alt]="slide.title"></a>
+            <a href="#"><img [src]="getFullImageUrl(slide.posterPath)" [alt]="slide.title"></a>
         </div>
     </div>
 </div>
